@@ -1,0 +1,97 @@
+<!DOCTYPE HTML>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>じゃんけんゲーム</title>
+    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <script src="js/underscore-min.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+    <link rel="stylesheet" type="text/css" href="css/janken.css">
+  </head>
+
+  <body>
+    <h1 class="top_title">Judge じゃんけん</h3>
+    <br />
+    <div id="field">
+      <table border="0" align="center">
+        <tr>
+          <td class="rival_lifepoint">
+            <div class="rival_lifepoint01"><img src="image/heart_red.png" alt="ハート"></div>
+            <div class="rival_lifepoint02"><img src="image/heart_red.png" alt="ハート"></div>
+            <div class="rival_lifepoint03"><img src="image/heart_red.png" alt="ハート"></div>
+          </td>
+          <td>
+            &nbsp;
+          </td>
+          <td class="my_lifepoint">
+            <div class="my_lifepoint01"><img src="image/heart_red.png" alt="ハート"></div>
+            <div class="my_lifepoint02"><img src="image/heart_red.png" alt="ハート"></div>
+            <div class="my_lifepoint03"><img src="image/heart_red.png" alt="ハート"></div>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div id="rival_hand">
+              <img src="image/gu.png" alt="グー" width="90px" height="90px">
+            </div>
+          </td>
+          <td>VS</td>
+          <td>
+            <div id="my_hand">
+              <img src="image/gu.png" alt="グー" width="90px" height="90px">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="left_name">相手</td>
+          <td>&nbsp;</td>
+          <td class="right_name">自分</td>
+        </tr>
+        <tr>
+          <td colspan="3">&nbsp;</td>
+        </tr>
+        <tr>
+          <th colspan="3">
+            <table border="0" align="center">
+              <td colspan="3" class="answer">なにをだそうかな？</td>
+              <td colspan="3" class="answer01" style="display:none;" >じゃーん、けーん</td>
+              <td colspan="3" class="answer02" style="display:none;">ぽーん！</td>
+              <td colspan="3" class="answer03" style="display:none;"> </td>
+        </tr>
+        <tr>
+          <!--
+            <th><button class="gu" disabled>グー</button></th>
+            <th><button class="ch" disabled>チョキ</button></th>
+            <th><button class="pa" disabled>パー</button></th>
+          -->
+          <th><input type="button" class="gu" value="グー" disabled></th>
+          <th><input type="button" class="ch" value="チョキ" disabled></th>
+          <th><input type="button" class="pa" value="パー" disabled></th>
+        </tr>
+        <tr>
+          <td colspan="3"><input type="button" class="start" value="スタート" ></td>
+        </tr>
+        <tr>
+          <td colspan="3"><input type="button" class="reset" value="リセット"></td>
+        </tr>
+            </table><br>
+            <div id="time"><span class="nokoritime">残りタイム</span><span class="time"> </span></div>
+            </tr>
+      </table>
+    </div>
+    <div id="modal-win" style="display:none;">
+      <p>あなたの<span class="win">勝ち</span>です。</p>
+      <p><a id="modal-win-close" class="button-link">閉じる</a></p>
+    </div>
+    <div id="modal-lose" style="display:none;">
+      <p>あなたの<span class="lose">負け</span>です。</p>
+      <p><a id="modal-lose-close" class="button-link">閉じる</a></p>
+    </div>
+    <div id="modal-overlay"></div>
+  </body>
+
+</html>
+
+
